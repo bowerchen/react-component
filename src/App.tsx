@@ -7,8 +7,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Button>Hello world</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello world</Button>
         <Button disabled btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello world</Button>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>Hello world</Button>
+        <Button btnType={ButtonType.Default} size={ButtonSize.Large}>Hello world</Button>
         <Button btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button>
         <Button disabled btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button>
         <p>
