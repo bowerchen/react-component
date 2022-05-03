@@ -41,7 +41,7 @@
 }
 
 .btn-default {
-    @include button-style($white, $gray-400, $body-color, $white, $primary)
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
 }
 
 .btn-link {
