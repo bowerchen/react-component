@@ -1,10 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
+import logo from "./logo.svg";
 // import './App.css';
-import Button, {ButtonType, ButtonSize} from './components/Button/button';
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
-import SubMenu from './components/Menu/subMenu'
+import Button, { ButtonType, ButtonSize } from "./components/Button/button";
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
+import Icon from "./components/Icon/icon";
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fas} from '@fortawesome/free-solid-svg-icons'
+import Transition from './components/Transition/transition'
+
+
+library.add(fas)
 
 function App() {
   return (
@@ -17,6 +24,8 @@ function App() {
         <Button btnType={ButtonType.Default} size={ButtonSize.Large}>Hello world</Button>
         <Button btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button>
         <Button disabled btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button> */}
+
+        {/* <Icon icon="arrow-down" theme="primary" size="10x" /> */}
 
         <Menu>
           <MenuItem>hello 1</MenuItem>
