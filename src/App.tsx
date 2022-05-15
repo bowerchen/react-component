@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 // import './App.css';
 import Button, { ButtonType, ButtonSize } from "./components/Button/button";
@@ -6,14 +6,27 @@ import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {fas} from '@fortawesome/free-solid-svg-icons'
-import Transition from './components/Transition/transition'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import Transition from "./components/Transition/transition";
+import axios from "axios";
 
-
-library.add(fas)
+library.add(fas);
 
 function App() {
+  const [title, setTitle] = useState("");
+  const postData = {
+    title: "title",
+    body: "hello man",
+  };
+  useEffect(() => {
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", postData)
+      .then((res) => {
+        console.log(res);
+        setTitle(res.data.title);
+      });
+  });
   return (
     <div className="App">
       <header className="App-header">
@@ -26,7 +39,7 @@ function App() {
         <Button disabled btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button> */}
 
         {/* <Icon icon="arrow-down" theme="primary" size="10x" /> */}
-
+        { title }
         <Menu>
           <MenuItem>hello 1</MenuItem>
           <SubMenu title="dropdown">

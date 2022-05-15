@@ -39,3 +39,12 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const MyButton = Template.bind({});
+MyButton.args = {
+  size: "large",
+  onClick: () => {
+    alert("This is my button")
+  },
+  label: "Button"
+}
